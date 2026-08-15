@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tiệm ăn vặt giá hạt dẻ - Bánh tráng muối, nui giòn rim mắm và món ăn vặt dành cho học sinh, sinh viên.">
+<title>Tiệm ăn vặt giá hạt dẻ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="topbar">
+  <nav class="nav container">
+    <a class="brand" href="#trang-chu"><span class="logo-mark">🍪</span>Tiệm ăn vặt giá hạt dẻ</a>
+    <div class="navlinks">
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#ve-chung-toi">Về chúng tôi</a>
+      <a href="#bai-viet">Bài viết</a>
+      <a href="#dat-hang">Đặt hàng</a>
+    </div>
+    <button class="cart-btn" onclick="openCart()">🛒 Giỏ hàng <span class="cart-count" id="cartCount">0</span></button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="trang-chu">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">Ăn vặt ngon · Giá hạt dẻ</span>
+      <h1>Ăn là ghiền,<br><span>giòn tan mỗi ngày!</span></h1>
+      <p>Bánh tráng muối, nui giòn rim mắm và những món ăn vặt thơm ngon, tiện lợi dành cho những buổi học, buổi làm và những lúc muốn ăn thật vui.</p>
+      <div class="actions">
+        <a class="btn primary" href="#san-pham">Xem sản phẩm</a>
+        <a class="btn light" href="#dat-hang">Đặt hàng ngay</a>
+      </div>
+    </div>
+    <div class="hero-visual cover-image">
+      <img src="images/hero.jpg" alt="Tiệm ăn vặt giá hạt dẻ - hình ảnh sản phẩm" style="width:100%;height:100%;object-fit:cover;display:block">
+    </div>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container benefit-grid">
+    <div class="benefit"><b>❤️</b>Ngon và hấp dẫn</div>
+    <div class="benefit"><b>💰</b>Giá cả hợp lý</div>
+    <div class="benefit"><b>🌿</b>Nguyên liệu được lựa chọn</div>
+    <div class="benefit"><b>🛡️</b>Đảm bảo vệ sinh</div>
+    <div class="benefit"><b>🚚</b>Giao hàng tiện lợi</div>
+  </div>
+</section>
+
+<section id="san-pham">
+  <div class="container">
+    <div class="head"><span class="eyebrow">Menu</span><h2>Món ăn vặt được yêu thích</h2><p>Chọn món, thêm vào giỏ và đặt hàng ngay trên website.</p></div>
+    <div class="toolbar">
+      <div class="filters">
+        <button class="filter active" data-filter="all">Tất cả</button><button class="filter" data-filter="banhtrang">Bánh tráng</button><button class="filter" data-filter="nui">Nui giòn</button>
+      </div>
+      <input class="search" id="search" placeholder="🔎 Tìm món ăn vặt...">
+    </div>
+    <div class="products" id="products"></div>
+  </div>
+</section>
+
+<section class="about" id="ve-chung-toi">
+  <div class="container about-grid">
+    <div class="about-art"><div><strong>Tiệm ăn vặt<br>giá hạt dẻ</strong><p>Ngon miệng · Giá hợp lý</p>🍘 🥜 🌶️</div></div>
+    <div class="about-copy">
+      <span class="eyebrow">Về chúng tôi</span>
+      <h2>Về Tiệm ăn vặt giá hạt dẻ</h2>
+      <p>Tiệm ăn vặt giá hạt dẻ được xây dựng với mong muốn mang đến những món ăn vặt thơm ngon, tiện lợi và phù hợp với túi tiền của học sinh, sinh viên.</p>
+      <div class="values">
+        <div class="value">❤️ Ngon và hấp dẫn</div><div class="value">💰 Giá cả hợp lý</div>
+        <div class="value">🌿 Nguyên liệu được lựa chọn</div><div class="value">🛡️ Đảm bảo vệ sinh</div>
+        <div class="value">🚚 Giao hàng tiện lợi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bai-viet">
+  <div class="container">
+    <div class="head"><span class="eyebrow">Góc ăn vặt</span><h2>Bài viết</h2><p>Một chút thông tin hữu ích để mỗi lần ăn vặt thêm vui.</p></div>
+    <div class="articles">
+      <article class="card"><div class="article-img"><img src="images/banh-trang.jpg" alt="Bánh tráng muối" style="width:100%;height:100%;object-fit:cover"></div><div class="article-body"><span class="date">12/08/2026</span><h3>Top món ăn vặt được sinh viên yêu thích</h3><p>Những món vừa ngon, dễ chia sẻ cùng bạn bè lại không quá “đau ví”.</p><button class="more" onclick="readMore('Top món ăn vặt được sinh viên yêu thích')">XEM THÊM →</button></div></article>
+      <article class="card"><div class="article-img"><img src="images/nui.jpg" alt="Nui giòn rim mắm" style="width:100%;height:100%;object-fit:cover"></div><div class="article-body"><span class="date">10/08/2026</span><h3>Nui giòn – món ăn vặt ăn là ghiền</h3><p>Vì sao nui giòn rim mắm luôn có sức hút đặc biệt với team mê đồ giòn?</p><button class="more" onclick="readMore('Nui giòn – món ăn vặt ăn là ghiền')">XEM THÊM →</button></div></article>
+      <article class="card"><div class="article-img"><span>🌿</span></div><div class="article-body"><span class="date">08/08/2026</span><h3>Bí quyết chọn đồ ăn vặt ngon và an toàn</h3><p>Gợi ý những điều nên kiểm tra khi chọn và bảo quản món ăn vặt.</p><button class="more" onclick="readMore('Bí quyết chọn đồ ăn vặt ngon và an toàn')">XEM THÊM →</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="dat-hang">
+  <div class="container">
+    <div class="head"><span class="eyebrow">Đặt hàng</span><h2>Đặt món nhanh chóng</h2><p>Điền thông tin, kiểm tra giỏ hàng và gửi đơn cho tiệm.</p></div>
+    <div class="order-box">
+      <form class="form" id="orderForm">
+        <div class="form-grid">
+          <div class="field"><label>Họ và tên *</label><input id="name" required placeholder="Nguyễn Văn A"></div>
+          <div class="field"><label>Số điện thoại *</label><input id="phone" required type="tel" placeholder="09xx xxx xxx"></div>
+        </div>
+        <div class="field"><label>Email</label><input id="email" type="email" placeholder="ban@example.com"></div>
+        <div class="form-grid">
+          <div class="field"><label>Chọn sản phẩm</label><select id="productSelect"><option value="">-- Chọn sản phẩm --</option></select></div>
+          <div class="field"><label>Số lượng</label><input id="quantity" type="number" min="1" value="1"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>Ngày nhận hàng</label><input id="date" type="date"></div>
+          <div class="field"><label>Thời gian nhận hàng</label><input id="time" type="time"></div>
+        </div>
+        <div class="field"><label>Địa điểm nhận hàng</label><input id="address" placeholder="Địa chỉ nhận hàng"></div>
+        <div class="field"><label>Ghi chú</label><textarea id="note" placeholder="Ví dụ: ít cay, gọi trước khi giao..."></textarea></div>
+        <label class="check"><input id="agree" type="checkbox" required> <span>Tôi đồng ý với thông tin đơn hàng.</span></label>
+        <button class="btn primary" type="submit">GỬI ĐƠN HÀNG</button>
+        <div class="success" id="success"><strong>🎉 Đặt hàng thành công!</strong><br>Cảm ơn bạn đã mua hàng tại Tiệm ăn vặt giá hạt dẻ.<br>Chúng tôi sẽ liên hệ để xác nhận đơn hàng.</div>
+      </form>
+
+      <aside class="payment">
+        <h3>💳 THÔNG TIN THANH TOÁN</h3>
+        <p><strong>Chuyển khoản ngân hàng</strong></p>
+        <p>Ngân hàng: <strong>TÊN NGÂN HÀNG</strong><br>STK: <strong>0123 456 789</strong><br>Chủ tài khoản: <strong>TIỆM ĂN VẶT GIÁ HẠT DẺ</strong></p>
+        <p><strong>VietQR</strong></p>
+        <div class="qr">
+          <!-- THAY KHUNG NÀY BẰNG ẢNH QR SAU NÀY -->
+          <div><strong>KHUNG ẢNH QR</strong><br>Thay bằng QR thanh toán của tiệm<br><small>Ví dụ: &lt;img src="qr.png"&gt;</small></div>
+        </div>
+        <p>Vui lòng chụp màn hình giao dịch và gửi cho người bán để xác nhận đơn.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><h3><img src="images/logo.png" alt="Logo" style="width:44px;height:44px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:8px">TIỆM ĂN VẶT GIÁ HẠT DẺ</h3><p>Ngon miệng – Giá hạt dẻ – Ăn là ghiền!</p></div>
+      <div><h3>Thông tin</h3><p>📞 Hotline: 09xx xxx xxx<br>📧 Email: tiem.anvat@gmail.com<br>📍 Địa chỉ: Bình Dương</p></div>
+      <div><h3>Kết nối</h3><p><a href="#" onclick="return false">Facebook</a> | <a href="#" onclick="return false">TikTok</a> | <a href="#" onclick="return false">Zalo</a></p></div>
+    </div>
+    <div class="footer-bottom">© 2026 Tiệm ăn vặt giá hạt dẻ. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><h2>🛒 Giỏ hàng</h2><button class="close" onclick="closeCart()">×</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="drawer-foot"><div class="total"><span>Tổng cộng</span><span id="cartTotal">0đ</span></div><a class="btn primary" href="#dat-hang" onclick="closeCart()">TIẾN HÀNH ĐẶT HÀNG</a></div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+const products=[
+ {id:1,name:"Bánh tráng muối",cat:"banhtrang",price:7000,icon:"🍘",image:"images/banh-trang.jpg",desc:"Bánh tráng đậm vị, cay nhẹ, thơm ngon và ăn là ghiền.",tag:"Bán chạy"},
+ {id:2,name:"Nui giòn rim mắm",cat:"nui",price:15000,icon:"🥨",image:"images/nui.jpg",desc:"Nui giòn vàng ruộm, rim mắm đậm đà, càng ăn càng cuốn.",tag:"Yêu thích"}
+];
+let cart=JSON.parse(localStorage.getItem("tiemCart")||"[]").filter(i=>i.id===1||i.id===2);
+let currentFilter="all";
+
+const money=n=>new Intl.NumberFormat("vi-VN").format(n)+"đ";
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ const list=products.filter(p=>(currentFilter==="all"||p.cat===currentFilter)&&(!q||p.name.toLowerCase().includes(q)));
+ document.getElementById("products").innerHTML=list.length?list.map(p=>`
+ <article class="card">
+  <div class="product-img">${p.tag?`<span class="tag">${p.tag}</span>`:""}${p.image?`<img src="${p.image}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block">`:`<div class="placeholder">${p.icon}</div>`}</div>
+  <div class="card-body"><h3>${p.name}</h3><p class="desc">${p.desc}</p>
+   <div class="card-bottom"><span class="price">${money(p.price)}</span><button class="add" onclick="addToCart(${p.id})">+ Thêm giỏ</button></div>
+  </div>
+ </article>`).join(""):"<p style='grid-column:1/-1;text-align:center;color:#75695f'>Không tìm thấy món phù hợp.</p>";
+}
+function save(){localStorage.setItem("tiemCart",JSON.stringify(cart))}
+function addToCart(id){
+ const p=products.find(x=>x.id===id), found=cart.find(x=>x.id===id);
+ if(found)found.qty++;else cart.push({id,qty:1});
+ save();renderCart();showToast("Đã thêm "+p.name+" vào giỏ 🛒");
+}
+function changeQty(id,delta){
+ const x=cart.find(i=>i.id===id);if(!x)return;x.qty+=delta;
+ if(x.qty<=0)cart=cart.filter(i=>i.id!==id);save();renderCart();
+}
+function removeItem(id){cart=cart.filter(i=>i.id!==id);save();renderCart()}
+function renderCart(){
+ const box=document.getElementById("cartItems");
+ let total=0,count=0;
+ if(!cart.length)box.innerHTML='<div class="empty">🛒<br><br>Giỏ hàng đang trống.<br>Hãy chọn món bạn thích nhé!</div>';
+ else box.innerHTML=cart.map(i=>{const p=products.find(x=>x.id===i.id);total+=p.price*i.qty;count+=i.qty;return `
+ <div class="cart-item"><div class="thumb">${p.icon}</div><div><h4>${p.name}</h4><small>${money(p.price)}</small><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button><span>${i.qty}</span><button onclick="changeQty(${p.id},1)">+</button></div></div>
+ <div class="cart-price">${money(p.price*i.qty)}<br><button class="remove" onclick="removeItem(${p.id})">Xóa</button></div></div>`}).join("");
+ document.getElementById("cartCount").textContent=count;
+ document.getElementById("cartTotal").textContent=money(total);
+}
+function openCart(){document.getElementById("drawer").classList.add("open");document.getElementById("overlay").classList.add("show");document.body.classList.add("cart-open")}
+function closeCart(){document.getElementById("drawer").classList.remove("open");document.getElementById("overlay").classList.remove("show");document.body.classList.remove("cart-open")}
+function showToast(text){const t=document.getElementById("toast");t.textContent=text;t.classList.add("show");clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove("show"),2200)}
+function readMore(title){showToast("Bài viết: "+title)}
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");currentFilter=b.dataset.filter;renderProducts()}));
+document.getElementById("search").addEventListener("input",renderProducts);
+
+const select=document.getElementById("productSelect");
+products.forEach(p=>{const o=document.createElement("option");o.value=p.id;o.textContent=p.name+" - "+money(p.price);select.appendChild(o)});
+document.getElementById("orderForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ const selected=select.value;
+ if(selected)addToCart(Number(selected));
+ document.getElementById("success").classList.add("show");
+ e.target.reset();
+ document.getElementById("quantity").value=1;
+ document.getElementById("success").scrollIntoView({behavior:"smooth",block:"center"});
+ showToast("Đơn hàng đã được ghi nhận 🎉");
+});
+renderProducts();renderCart();
+</script>
+</body>
+</html>
