@@ -5,7 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Tiệm ăn vặt giá hạt dẻ - Bánh tráng muối, nui giòn rim mắm và món ăn vặt dành cho học sinh, sinh viên.">
 <title>Tiệm ăn vặt giá hạt dẻ</title>
-<link rel="stylesheet" href="style.css">
+<style>
+:root{
+  --cream:#fff8e9;--cream2:#f7e8c9;--orange:#df7d16;--yellow:#f2ad22;
+  --brown:#5a321d;--brown2:#7a4a2a;--white:#fff;--text:#30251e;
+  --muted:#75695f;--green:#647a43;--red:#c94e2d;--line:#ead9bd;
+  --shadow:0 12px 35px rgba(76,45,23,.10);--radius:20px
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:"Be Vietnam Pro",Arial,sans-serif;color:var(--text);background:var(--cream);line-height:1.6}
+a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(255,248,233,.96);backdrop-filter:blur(12px);border-bottom:1px solid #5a321d18}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand-logo{width:52px;height:52px;object-fit:cover;border-radius:50%;border:2px solid #ead9bd;background:#fff}.brand{display:flex;align-items:center;gap:10px;color:var(--brown);font-weight:900;font-size:18px}
+.logo-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--orange);color:#fff}
+.navlinks{display:flex;gap:25px;font-size:14px;font-weight:800;color:var(--brown2)}
+.navlinks a:hover{color:var(--orange)}
+.cart-btn{border:0;background:var(--brown);color:#fff;border-radius:999px;padding:10px 15px;cursor:pointer;font-weight:800}
+.cart-count{background:var(--yellow);color:var(--brown);border-radius:50%;padding:2px 7px;margin-left:5px}
+
+.hero{padding:75px 0;background:radial-gradient(circle at 85% 20%,#f2ad2230,transparent 28%),radial-gradient(circle at 5% 85%,#647a4315,transparent 25%),var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:center}
+.badge{display:inline-block;background:#f3dfb8;color:var(--orange);padding:6px 13px;border-radius:99px;font-size:12px;font-weight:900}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.04;letter-spacing:-2px;color:var(--brown);margin:15px 0}
+h1 span{color:var(--orange)}
+.hero p{font-size:18px;color:var(--muted);max-width:620px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{border:0;border-radius:999px;padding:13px 21px;font-weight:900;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--orange);color:#fff;box-shadow:0 8px 20px #df7d1633}.dark{background:var(--brown);color:#fff}.light{background:#fff;border:1px solid var(--line);color:var(--brown)}
+.hero-visual{min-height:420px;border-radius:32px;background:linear-gradient(145deg,#fffdf7,#f3d69f);box-shadow:var(--shadow);display:grid;place-items:center;position:relative;overflow:hidden}
+.food-illustration{width:72%;aspect-ratio:1;border-radius:50%;background:#eaa13b;display:grid;place-items:center;box-shadow:inset 0 0 0 15px #fff7;position:relative}
+.food-illustration:after{content:"";width:55%;height:37%;border-radius:50%;background:radial-gradient(circle at 20% 40%,#c94e2d 0 5%,transparent 6%),radial-gradient(circle at 55% 25%,#647a43 0 5%,transparent 6%),radial-gradient(circle at 75% 60%,#df7d16 0 5%,transparent 6%),#d88b2e;transform:rotate(-8deg);box-shadow:0 16px 20px #5a321d22}
+.visual-label{position:absolute;bottom:25px;left:25px;right:25px;background:#fff;border-radius:17px;padding:14px 17px;display:flex;justify-content:space-between;box-shadow:0 8px 20px #5a321d18}
+.visual-label strong{color:var(--brown)}.visual-label small{color:var(--muted)}
+
+.benefits{background:var(--brown);color:#fff;padding:20px 0}.benefit-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.benefit{text-align:center;font-weight:800;font-size:13px}.benefit b{display:block;font-size:23px;margin-bottom:3px}
+
+section{padding:78px 0}.head{text-align:center;max-width:700px;margin:0 auto 35px}.eyebrow{text-transform:uppercase;letter-spacing:1px;font-size:12px;font-weight:900;color:var(--orange)}h2{color:var(--brown);font-size:clamp(29px,4vw,42px);line-height:1.15;margin:8px 0 10px}.head p{color:var(--muted);margin:0}
+
+.toolbar{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-bottom:25px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:#fff;color:var(--brown2);border-radius:99px;padding:8px 14px;cursor:pointer;font-weight:800}.filter.active,.filter:hover{background:var(--brown);color:#fff}
+.search{border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 15px;width:250px;outline:0}.search:focus{border-color:var(--orange)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 7px 22px #5a321d0e;transition:.25s;display:flex;flex-direction:column}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.product-img,.article-img{background:#f1d39b;position:relative;display:grid;place-items:center;overflow:hidden}.product-img{aspect-ratio:1.05}.placeholder{width:75%;height:68%;border-radius:18px;background:linear-gradient(145deg,#fff2d5,#e9a332);display:grid;place-items:center;font-size:58px;box-shadow:0 14px 25px #5a321d1a}.tag{position:absolute;top:12px;left:12px;background:var(--red);color:#fff;padding:5px 9px;border-radius:99px;font-size:10px;font-weight:900}
+.card-body{padding:17px;display:flex;flex-direction:column;flex:1}.card h3{color:var(--brown);font-size:18px;margin:0 0 6px}.desc{font-size:13px;color:var(--muted);min-height:42px;margin:0 0 12px}.card-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px}.price{font-weight:900;color:var(--orange);font-size:18px}.add{border:0;background:var(--brown);color:#fff;border-radius:99px;padding:9px 13px;cursor:pointer;font-size:12px;font-weight:900}.add:hover{background:var(--orange)}
+
+.about{background:#f1e2c8}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}.about-art{min-height:330px;border-radius:28px;background:linear-gradient(145deg,#df7d16,#f2ad22);display:grid;place-items:center;color:#fff;text-align:center;box-shadow:var(--shadow)}.about-art strong{display:block;font-size:34px;line-height:1.15}.about-copy p{color:var(--muted)}.values{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}.value{background:#fff9;padding:13px 15px;border-radius:14px;font-weight:800;color:var(--brown2)}
+
+.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.article-img{height:190px}.article-img span{font-size:55px}.article-body{padding:18px}.date{font-size:12px;color:var(--orange);font-weight:800}.article-body h3{color:var(--brown);margin:7px 0;font-size:19px}.article-body p{font-size:13px;color:var(--muted)}.more{border:0;background:none;color:var(--orange);font-weight:900;cursor:pointer;padding:0}
+
+.order-box{background:#fff;border:1px solid var(--line);border-radius:26px;padding:30px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr .9fr;gap:35px}.form{display:grid;gap:13px}.field label{display:block;color:var(--brown);font-size:13px;font-weight:900;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:11px;background:#fffdf8;outline:0}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--orange)}.field textarea{min-height:95px;resize:vertical}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;gap:9px;align-items:flex-start;font-size:13px;color:var(--muted)}.check input{margin-top:4px}.success{display:none;background:#eef6df;border:1px solid #cadca9;color:#4b652e;border-radius:14px;padding:15px}.success.show{display:block}.payment{background:var(--cream);border-radius:18px;padding:25px}.payment h3{color:var(--brown);margin-top:0}.qr{height:230px;border:2px dashed #caa873;border-radius:16px;background:#fffaf0;display:grid;place-items:center;text-align:center;color:var(--muted);padding:20px}.qr strong{display:block;color:var(--brown);font-size:18px}.payment p{font-size:13px;color:var(--muted)}
+
+footer{background:#2f1c11;color:#e9d8c4;padding:45px 0 20px}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:30px}.footer-grid h3{color:#fff}.footer-grid p,.footer-grid a{color:#d8c3ae}.footer-bottom{text-align:center;border-top:1px solid #ffffff1a;padding-top:18px;margin-top:28px;font-size:12px}
+
+.overlay{position:fixed;inset:0;background:#1d120b80;z-index:150;opacity:0;visibility:hidden;transition:.2s}.overlay.show{opacity:1;visibility:visible}
+.drawer{position:fixed;z-index:160;right:0;top:0;width:min(430px,100%);height:100vh;background:var(--cream);transform:translateX(100%);transition:.25s;display:flex;flex-direction:column;box-shadow:-12px 0 30px #0003}.drawer.open{transform:translateX(0)}
+.drawer-head{background:#fff;padding:18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}.drawer-head h2{margin:0;font-size:23px}.close{width:38px;height:38px;border:0;border-radius:50%;background:#f2e4cf;color:var(--brown);cursor:pointer;font-size:20px}.cart-items{padding:16px;overflow:auto;flex:1}.empty{text-align:center;color:var(--muted);padding:45px 20px}.cart-item{display:grid;grid-template-columns:55px 1fr auto;gap:10px;background:#fff;border:1px solid var(--line);padding:10px;border-radius:13px;margin-bottom:10px}.thumb{width:55px;height:55px;border-radius:10px;background:#f1d39b;display:grid;place-items:center;font-size:27px}.cart-item h4{font-size:14px;color:var(--brown);margin:0}.cart-item small{color:var(--muted)}.qty{display:flex;align-items:center;gap:6px;margin-top:5px}.qty button{width:24px;height:24px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer}.cart-price{text-align:right;color:var(--orange);font-weight:900;font-size:13px}.remove{border:0;background:none;color:#9b7055;cursor:pointer;font-size:11px}.drawer-foot{background:#fff;padding:17px;border-top:1px solid var(--line)}.total{display:flex;justify-content:space-between;color:var(--brown);font-size:19px;font-weight:900;margin-bottom:12px}.drawer-foot .btn{width:100%}
+.toast{position:fixed;z-index:300;bottom:25px;left:50%;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--brown);color:#fff;border-radius:99px;padding:11px 18px;font-size:13px;transition:.25s}.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:980px){.hero-grid,.about-grid,.order-box{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.benefit-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.navlinks{display:none}.hero{padding:55px 0}.hero-visual{min-height:340px}.products,.articles{grid-template-columns:1fr}.benefit-grid{grid-template-columns:1fr 1fr}.form-grid,.values{grid-template-columns:1fr}.search{width:100%}.toolbar{display:block}.search{margin-top:10px}.order-box{padding:18px}.footer-grid{grid-template-columns:1fr}section{padding:60px 0}}
+
+.cover-image{padding:0;background:#f3dfb8;overflow:hidden}
+.cover-image img{width:100%;height:100%;min-height:420px;display:block;object-fit:cover;object-position:center;border-radius:32px}
+</style>
 </head>
 
 <body>
@@ -35,7 +99,7 @@
       </div>
     </div>
     <div class="hero-visual cover-image">
-      <img src="images/hero.jpg" alt="Tiệm ăn vặt giá hạt dẻ - hình ảnh sản phẩm" style="width:100%;height:100%;object-fit:cover;display:block">
+      <img src="hero.jpg" alt="Tiệm ăn vặt giá hạt dẻ - hình ảnh sản phẩm" style="width:100%;height:100%;object-fit:cover;display:block">
     </div>
   </div>
 </section>
@@ -83,8 +147,8 @@
   <div class="container">
     <div class="head"><span class="eyebrow">Góc ăn vặt</span><h2>Bài viết</h2><p>Một chút thông tin hữu ích để mỗi lần ăn vặt thêm vui.</p></div>
     <div class="articles">
-      <article class="card"><div class="article-img"><img src="images/banh-trang.jpg" alt="Bánh tráng muối" style="width:100%;height:100%;object-fit:cover"></div><div class="article-body"><span class="date">12/08/2026</span><h3>Top món ăn vặt được sinh viên yêu thích</h3><p>Những món vừa ngon, dễ chia sẻ cùng bạn bè lại không quá “đau ví”.</p><button class="more" onclick="readMore('Top món ăn vặt được sinh viên yêu thích')">XEM THÊM →</button></div></article>
-      <article class="card"><div class="article-img"><img src="images/nui.jpg" alt="Nui giòn rim mắm" style="width:100%;height:100%;object-fit:cover"></div><div class="article-body"><span class="date">10/08/2026</span><h3>Nui giòn – món ăn vặt ăn là ghiền</h3><p>Vì sao nui giòn rim mắm luôn có sức hút đặc biệt với team mê đồ giòn?</p><button class="more" onclick="readMore('Nui giòn – món ăn vặt ăn là ghiền')">XEM THÊM →</button></div></article>
+      <article class="card"><div class="article-img"><img src="banh-trang.jpg" alt="Bánh tráng muối" style="width:100%;height:100%;object-fit:cover"></div><div class="article-body"><span class="date">12/08/2026</span><h3>Top món ăn vặt được sinh viên yêu thích</h3><p>Những món vừa ngon, dễ chia sẻ cùng bạn bè lại không quá “đau ví”.</p><button class="more" onclick="readMore('Top món ăn vặt được sinh viên yêu thích')">XEM THÊM →</button></div></article>
+      <article class="card"><div class="article-img"><img src="nui.jpg" alt="Nui giòn rim mắm" style="width:100%;height:100%;object-fit:cover"></div><div class="article-body"><span class="date">10/08/2026</span><h3>Nui giòn – món ăn vặt ăn là ghiền</h3><p>Vì sao nui giòn rim mắm luôn có sức hút đặc biệt với team mê đồ giòn?</p><button class="more" onclick="readMore('Nui giòn – món ăn vặt ăn là ghiền')">XEM THÊM →</button></div></article>
       <article class="card"><div class="article-img"><span>🌿</span></div><div class="article-body"><span class="date">08/08/2026</span><h3>Bí quyết chọn đồ ăn vặt ngon và an toàn</h3><p>Gợi ý những điều nên kiểm tra khi chọn và bảo quản món ăn vặt.</p><button class="more" onclick="readMore('Bí quyết chọn đồ ăn vặt ngon và an toàn')">XEM THÊM →</button></div></article>
     </div>
   </div>
@@ -134,7 +198,7 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-      <div><h3><img src="images/logo.png" alt="Logo" style="width:44px;height:44px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:8px">TIỆM ĂN VẶT GIÁ HẠT DẺ</h3><p>Ngon miệng – Giá hạt dẻ – Ăn là ghiền!</p></div>
+      <div><h3><img src="logo.png" alt="Logo" style="width:44px;height:44px;object-fit:cover;border-radius:50%;vertical-align:middle;margin-right:8px">TIỆM ĂN VẶT GIÁ HẠT DẺ</h3><p>Ngon miệng – Giá hạt dẻ – Ăn là ghiền!</p></div>
       <div><h3>Thông tin</h3><p>📞 Hotline: 09xx xxx xxx<br>📧 Email: tiem.anvat@gmail.com<br>📍 Địa chỉ: Bình Dương</p></div>
       <div><h3>Kết nối</h3><p><a href="#" onclick="return false">Facebook</a> | <a href="#" onclick="return false">TikTok</a> | <a href="#" onclick="return false">Zalo</a></p></div>
     </div>
@@ -152,8 +216,8 @@
 
 <script>
 const products=[
- {id:1,name:"Bánh tráng muối",cat:"banhtrang",price:7000,icon:"🍘",image:"images/banh-trang.jpg",desc:"Bánh tráng đậm vị, cay nhẹ, thơm ngon và ăn là ghiền.",tag:"Bán chạy"},
- {id:2,name:"Nui giòn rim mắm",cat:"nui",price:15000,icon:"🥨",image:"images/nui.jpg",desc:"Nui giòn vàng ruộm, rim mắm đậm đà, càng ăn càng cuốn.",tag:"Yêu thích"}
+ {id:1,name:"Bánh tráng muối",cat:"banhtrang",price:7000,icon:"🍘",image:"banh-trang.jpg",desc:"Bánh tráng đậm vị, cay nhẹ, thơm ngon và ăn là ghiền.",tag:"Bán chạy"},
+ {id:2,name:"Nui giòn rim mắm",cat:"nui",price:15000,icon:"🥨",image:"nui.jpg",desc:"Nui giòn vàng ruộm, rim mắm đậm đà, càng ăn càng cuốn.",tag:"Yêu thích"}
 ];
 let cart=JSON.parse(localStorage.getItem("tiemCart")||"[]").filter(i=>i.id===1||i.id===2);
 let currentFilter="all";
